@@ -2,7 +2,7 @@ package first;
 
 import java.util.Scanner;
 
-public class Seki {
+public class Main {
 
 	public static void main(String[] args) {
 
@@ -21,35 +21,12 @@ public class Seki {
 		System.out.println("２：サイダー");
 		System.out.println("３：コーヒー");
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println(sc);
-		int itemNum = 0;
-		try {
-			itemNum = sc.nextInt();
-		} catch(Exception e) {
-			System.out.println("商品がありません");
-			System.out.println(e);
-			System.exit(1);
-		} finally {
-			sc.close();
-		}
-
-		switch(itemNum){
-			case 1:
-				item = "コーラ";
-				break;
-			case 2:
-				item = "サイダー";
-				break;
-			case 3:
-				item = "コーヒー";
-				break;
-		}
+		item = SelectItem.selectItem();
 
 	System.out.println(item + "を選択しました");
 
 		for(int i =0;i<=0;i += 0){
-
+			Scanner sc ;
 			sc = new Scanner(System.in);
 
 			if(money >=120){
