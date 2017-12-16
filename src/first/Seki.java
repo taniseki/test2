@@ -22,11 +22,13 @@ public class Seki {
 		System.out.println("３：コーヒー");
 
 		Scanner sc = new Scanner(System.in);
+		System.out.println(sc);
 		int itemNum = 0;
 		try {
 			itemNum = sc.nextInt();
 		} catch(Exception e) {
 			System.out.println("商品がありません");
+			System.out.println(e);
 			System.exit(1);
 		} finally {
 			sc.close();
