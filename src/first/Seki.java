@@ -11,30 +11,27 @@ public class Seki {
 
 		System.out.println("お金を入れてください");
 		System.out.println("金額を入力してください");
-		Scanner sc = new Scanner(System.in);
 
 		int money = 0;
-		try {
-			money = sc.nextInt();
-		} catch (Exception e) {
-			System.out.println("数字を入力してください");
-			sc.close();
-			System.exit(1);
-		}
-		if(money / 10 != 0){
-			System.out.println("認識できないお金です");
-		}else{
-			money += money;
-		}
-		System.out.println(money);
+		money = InputMoney.inputMoney();
+
 
 		System.out.println("購入する商品番号を選択してください");
 		System.out.println("１：コーラ");
 		System.out.println("２：サイダー");
 		System.out.println("３：コーヒー");
 
-		sc = new Scanner(System.in);
-		int itemNum = sc.nextInt();
+		Scanner sc = new Scanner(System.in);
+		int itemNum = 0;
+		try {
+			itemNum = sc.nextInt();
+		} catch(Exception e) {
+			System.out.println("商品がありません");
+			System.exit(1);
+		} finally {
+			sc.close();
+		}
+
 		switch(itemNum){
 			case 1:
 				item = "コーラ";
@@ -47,7 +44,7 @@ public class Seki {
 				break;
 		}
 
-		System.out.println(item + "を選択しました");
+	System.out.println(item + "を選択しました");
 
 		for(int i =0;i<=0;i += 0){
 

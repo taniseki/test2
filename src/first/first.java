@@ -12,5 +12,4 @@ public class first {
 		//東京
 		System.out.println("やっと開発できますね！");
 	}
-
 }
