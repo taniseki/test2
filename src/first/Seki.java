@@ -14,9 +14,6 @@ public class Seki {
 		Scanner sc = new Scanner(System.in);
 
 		int money = sc.nextInt();
-		int itemComprete = 0;
-
-
 		System.out.println(money);
 
 		System.out.println("購入する商品番号を選択してください");
@@ -38,17 +35,17 @@ public class Seki {
 		}
 
 
-		for(int i =0;;i=1){
+		for(int i =0;i==1;){
 			sc = new Scanner(System.in);
 
 			if(money >=120){
 				System.out.println(item + "を購入しました");
-				itemComprete = 1;
 				sc.close();
+				i += 1;
 			}else{
 				System.out.println("金額が不足しています。");
 				money += sc.nextInt();
-				itemComprete += 0;
+				i += 0;
 
 			}
 		}
