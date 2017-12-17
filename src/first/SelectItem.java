@@ -12,16 +12,18 @@ public class SelectItem {
 	public static String selectItem(){
 		System.out.println("aaaaaaaaa");
 		Scanner sc = new Scanner(System.in);
-		System.out.println("aaaaaaaaa");
-		String item = null;
+		System.out.println(sc);
+		String item = "";
 		int itemNum = 0;
+		itemNum = sc.nextInt();
 		try {
+			System.out.println("ssss");
 			itemNum = sc.nextInt();
 		} catch(Exception e) {
 			System.out.println("商品がありません");
 			System.out.println(e);
 			System.exit(1);
-			return item;
+
 		} finally {
 			sc.close();
 		}
