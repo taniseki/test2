@@ -2,6 +2,7 @@ package first;
 
 import java.util.Scanner;
 
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -10,32 +11,32 @@ public class Main {
 		//購入商品
 		String item = "";
 
-		System.out.println("お金を入れてください");
-		System.out.println("金額を入力してください");
+		System.out.println(Message.INPUT_MONEY);
+		System.out.println(Message.SELECT_MONEY);
 
 		int money = 0;
 		money = InputMoney.inputMoney(sc);
 
 
-		System.out.println("購入する商品番号を選択してください");
-		System.out.println("１：コーラ");
-		System.out.println("２：サイダー");
-		System.out.println("３：コーヒー");
+		System.out.println(Message.SELECT_ITEM);
+		System.out.println(Message.COLA);
+		System.out.println(Message.CIDER);
+		System.out.println(Message.CAFFEE);
 
 		item = SelectItem.selectItem(sc);
 
-		System.out.println(item + "を選択しました");
+		System.out.println(item + Message.YOUR_SELECT_ITEM);
 
 		for(int i =0;i<=0;i += 0){
 //			Scanner sc ;
 //			sc = new Scanner(System.in);
 
 			if(money >=120){
-				System.out.println(item + "を購入しました");
+				System.out.println(item + Message.YOUR_BUY);
 				sc.close();
 				i += 1;
 			}else{
-				System.out.println("金額が不足しています。");
+				System.out.println(Message.INSUFFICIENT_MONEY);
 				money += sc.nextInt();
 				i += 0;
 

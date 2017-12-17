@@ -14,11 +14,11 @@ public class InputMoney {
 		try {
 			money = sc.nextInt();
 		} catch (Exception e) {
-			System.out.println("数字を入力してください");
+			System.out.println(Message.PLEASE_NUMBER);
 			System.exit(1);
 		}
 		if(money % 10 != 0){
-			System.out.println("認識できないお金です");
+			System.out.println(Message.NOT_MONEY);
 			System.exit(1);
 			return 0;
 		}else{

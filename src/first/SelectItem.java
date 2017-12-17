@@ -16,7 +16,7 @@ public class SelectItem {
 		try {
 			itemNum = sc.nextInt();
 		} catch(Exception e) {
-			System.out.println("商品がありません");
+			System.out.println(Message.NO_ITEM);
 			System.out.println(e);
 			System.exit(1);
 			return item;
@@ -26,13 +26,13 @@ public class SelectItem {
 
 		switch(itemNum){
 			case 1:
-				item = "コーラ";
+				item = Message.COLA;
 				break;
 			case 2:
-				item = "サイダー";
+				item = Message.CIDER;
 				break;
 			case 3:
-				item = "コーヒー";
+				item = Message.CAFFEE;
 				break;
 		}
 		return item;
