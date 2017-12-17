@@ -28,7 +28,7 @@ public class Main {
 		System.out.println(item + Message.YOUR_SELECT_ITEM);
 
 //		for(int i =0;i<=0;i += 0){
-		while(money <= 120){
+		while(money < 120){
 			System.out.println(Message.INSUFFICIENT_MONEY);
 			money += InputMoney.inputMoney(sc);
 		}
