@@ -5,15 +5,16 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
 
 		//購入商品
-		String item = null;
+		String item = "";
 
 		System.out.println("お金を入れてください");
 		System.out.println("金額を入力してください");
 
 		int money = 0;
-		money = InputMoney.inputMoney();
+		money = InputMoney.inputMoney(sc);
 
 
 		System.out.println("購入する商品番号を選択してください");
@@ -21,13 +22,13 @@ public class Main {
 		System.out.println("２：サイダー");
 		System.out.println("３：コーヒー");
 
-		item = SelectItem.selectItem();
+		item = SelectItem.selectItem(sc);
 
 		System.out.println(item + "を選択しました");
 
 		for(int i =0;i<=0;i += 0){
-			Scanner sc ;
-			sc = new Scanner(System.in);
+//			Scanner sc ;
+//			sc = new Scanner(System.in);
 
 			if(money >=120){
 				System.out.println(item + "を購入しました");

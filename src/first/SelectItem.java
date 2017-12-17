@@ -9,12 +9,10 @@ import java.util.Scanner;
  */
 public class SelectItem {
 
-	public static String selectItem(){
-		System.out.println("aaaaaaaaa");
-		Scanner sc = new Scanner(System.in);
-		System.out.println("aaaaaaaaa");
-		String item = null;
+	public static String selectItem(Scanner sc){
+		String item = "";
 		int itemNum = 0;
+
 		try {
 			itemNum = sc.nextInt();
 		} catch(Exception e) {
@@ -22,8 +20,6 @@ public class SelectItem {
 			System.out.println(e);
 			System.exit(1);
 			return item;
-		} finally {
-			sc.close();
 		}
 
 		switch(itemNum){
