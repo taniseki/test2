@@ -23,7 +23,7 @@ public class Main {
 
 		item = SelectItem.selectItem();
 
-	System.out.println(item + "を選択しました");
+		System.out.println(item + "を選択しました");
 
 		for(int i =0;i<=0;i += 0){
 			Scanner sc ;
