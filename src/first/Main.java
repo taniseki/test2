@@ -14,6 +14,8 @@ public class Main {
 
 		money = InputMoney.inputMoney();
 
+		//ここに下にあるwhile文を持ってきたい。
+		//その場合、上のInputMoney()メソッドはいらなくなる。
 
 		System.out.println(Message.SELECT_ITEM);
 		System.out.println(Message.COLA);

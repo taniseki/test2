@@ -22,8 +22,11 @@ public class InputMoney {
 		}
 		if(money % 10 != 0){
 			System.out.println(Message.NOT_MONEY);
-			System.exit(1);
-			return 0;
+			//ここのエグジットを消すために、使用を変更したい。
+			//Mainメソッドのwhile文を上に持ってきて、
+			//120円入れるまで商品を表示しないようにしたい
+			//System.exit(1);
+			return money;
 		}else{
 			return money;
 		}
