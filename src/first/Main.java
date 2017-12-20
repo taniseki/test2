@@ -12,10 +12,10 @@ public class Main {
 		System.out.println(Message.INPUT_MONEY);
 		System.out.println(Message.SELECT_MONEY);
 
-		money = InputMoney.inputMoney();
-
-		//ここに下にあるwhile文を持ってきたい。
-		//その場合、上のInputMoney()メソッドはいらなくなる。
+		while(money < 120){
+			System.out.println(Message.INSUFFICIENT_MONEY);
+			money = money + InputMoney.inputMoney();
+		}
 
 		System.out.println(Message.SELECT_ITEM);
 		System.out.println(Message.COLA);
@@ -26,10 +26,6 @@ public class Main {
 
 		System.out.println(item + Message.YOUR_SELECT_ITEM);
 
-		while(money < 120){
-			System.out.println(Message.INSUFFICIENT_MONEY);
-			money += InputMoney.inputMoney();
-		}
 
 		System.out.println(item + Message.YOUR_BUY);
 
