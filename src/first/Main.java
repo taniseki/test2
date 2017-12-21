@@ -17,16 +17,11 @@ public class Main {
 			money = money + InputMoney.inputMoney();
 		}
 
-		System.out.println(Message.SELECT_ITEM);
-		System.out.println(Message.COLA);
-		System.out.println(Message.CIDER);
-		System.out.println(Message.CAFFEE);
-
-		item = SelectItem.selectItem();
+		while(item == ""){
+			item = SelectItem.selectItem();
+		}
 
 		System.out.println(item + Message.YOUR_SELECT_ITEM);
-
-
 		System.out.println(item + Message.YOUR_BUY);
 
 	}

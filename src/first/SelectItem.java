@@ -11,6 +11,12 @@ import java.io.InputStreamReader;
 public class SelectItem {
 
 	public static String selectItem(){
+
+		System.out.println(Message.SELECT_ITEM);
+		System.out.println(Message.COLA);
+		System.out.println(Message.CIDER);
+		System.out.println(Message.CAFFEE);
+
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		String item = "";
 		int itemNum = 0;
@@ -19,11 +25,7 @@ public class SelectItem {
 			itemNum = new Integer(in.readLine());
 		} catch(Exception e) {
 			System.out.println(Message.NO_ITEM);
-			System.out.println(e);
-			System.exit(1);
 			return item;
-		} finally {
-
 		}
 
 		switch(itemNum){
