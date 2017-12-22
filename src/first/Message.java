@@ -19,6 +19,6 @@ public class Message {
 	 static final String NO_ITEM = "商品がありません";
 	 static final String PLEASE_NUMBER = "数字を入力してください";
 	 static final String NOT_MONEY = "認識できないお金です";
-
+	 static final String WALLET = "現在の投入金額：";
 
 }

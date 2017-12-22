@@ -14,6 +14,7 @@ public class Main {
 
 		while(money < 120){
 			System.out.println(Message.INSUFFICIENT_MONEY);
+			System.out.println(Message.WALLET + money);
 			money = money + InputMoney.inputMoney();
 		}
 

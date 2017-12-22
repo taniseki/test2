@@ -22,6 +22,10 @@ public class InputMoney {
 		}
 		if(money % 10 != 0){
 			System.out.println(Message.NOT_MONEY);
+			//一の位を切り捨てる
+			double comtempMoney = money * 0.1;
+			int comtempMoney2 = (int) Math.floor(comtempMoney);
+			money = comtempMoney2 * 10;
 			//ここのエグジットを消すために、使用を変更したい。
 			//Mainメソッドのwhile文を上に持ってきて、
 			//120円入れるまで商品を表示しないようにしたい
