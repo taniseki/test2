@@ -1,9 +1,20 @@
 package beverage;
 
-public class CocaCola500ml {
+public class CocaCola500ml extends Item {
+
+	/**
+	 *
+	 */
 	Cola cola = new Cola();
+	/**
+	 *
+	 */
 	Petbottles petbottles = new Petbottles();
+
+	/**
+	 * コンストラクタ
+	 */
 	public CocaCola500ml() {
-		cola.setAmount(160);
+		super("コーラ", 10);
 	}
 }
