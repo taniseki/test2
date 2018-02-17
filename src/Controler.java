@@ -9,11 +9,17 @@ public class Controler {
 	public void buy() {
 		// お金を入れる
 		vm.checkMoney(human.insertMoney());
-		// 買う
-		Item drink = vm.pushBottun();
+		vm.checkMoney(human.insertMoney());
+		// 買える商品を表示
+		vm.canBuyItemDisp();
+		// 引数で商品選択
+		Item drink = vm.pushBottun(2);
 		if(drink == null) {
 			return;
 		}
-		System.out.println(drink.getName() + "を購入しました");
+	}
+
+	public void select() {
+
 	}
 }
