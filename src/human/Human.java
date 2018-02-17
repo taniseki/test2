@@ -5,7 +5,7 @@ import money.TenYen;
 
 public class Human {
 	/**
-	 * お金
+	 * 所持金
 	 */
 	private Money money= new TenYen();
 

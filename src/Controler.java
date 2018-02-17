@@ -10,10 +10,10 @@ public class Controler {
 		// お金を入れる
 		vm.checkMoney(human.insertMoney());
 		// 買う
-		Item d = vm.pushBottun();
-		if(d == null) {
+		Item drink = vm.pushBottun();
+		if(drink == null) {
 			return;
 		}
-		System.out.println(d.getName() + "を購入しました");
+		System.out.println(drink.getName() + "を購入しました");
 	}
 }

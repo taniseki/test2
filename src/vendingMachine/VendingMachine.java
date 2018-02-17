@@ -11,9 +11,10 @@ public class VendingMachine {
 	 * 今入ってるお金
 	 */
 	private int amount = 0;
+	/**
+	 * 商品（コーラ）
+	 */
 	private Item cola = new CocaCola500ml();
-	private boolean isCola = false;
-
 
 	/**
 	 * お金チェック
@@ -23,12 +24,9 @@ public class VendingMachine {
 	public void checkMoney(Money money) {
 		// お金かチェック
 		if(money instanceof Yen && money instanceof Coin) {
-			amount += money.amount;
+			this.amount += money.amount;
 		}
-		// お金が飲み物の代金より多ければボタンをアクティブにする
-		if(amount >= 10) {
-			this.isCola = true;
-		}
+		System.out.println("現在の金額 : ¥" + this.amount);
 	}
 
 	/**
@@ -37,7 +35,7 @@ public class VendingMachine {
 	 * @return 買った飲み物
 	 */
 	public Item pushBottun() {
-		if(isCola) {
+		if(this.amount >= this.cola.getAmount()) {
 			return cola;
 		}
 		return null;
