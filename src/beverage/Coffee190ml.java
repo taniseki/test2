@@ -1,9 +1,17 @@
 package beverage;
 
-public class Coffee190ml {
+public class Coffee190ml extends Item{
+	/**
+	 *
+	 */
 	Coffee coffee = new Coffee();
+	/**
+	 *
+	 */
 	Can can = new Can();
+	/**
+	 * コンスタラクタ
+	 */
 	public Coffee190ml(){
-		coffee.setAmount(130);
-	}
+	super("コーヒー",30);}
 }
