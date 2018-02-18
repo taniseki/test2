@@ -8,8 +8,8 @@ public class Controler {
 
 	public void buy() {
 		// お金を入れる
-		vm.checkMoney(human.insertMoney());
-		vm.checkMoney(human.insertMoney());
+		vm.checkCoinMoney(human.insertMoney());
+		vm.checkCoinMoney(human.insertMoney());
 		// 買える商品を表示
 		vm.canBuyItemDisp();
 		// 引数で商品選択
