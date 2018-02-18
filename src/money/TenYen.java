@@ -1,8 +1,15 @@
 package money;
 
 public class TenYen extends Yen implements Coin {
+	/**
+	 * 金額
+	 */
 	public static final int TEN_YEN = 10;
+
+	/**
+	 * コンストラクタ
+	 */
 	public TenYen() {
-		super.amount = TEN_YEN;
+		super.setAmount(TEN_YEN);
 	}
 }
