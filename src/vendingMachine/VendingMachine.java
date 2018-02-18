@@ -54,7 +54,7 @@ public class VendingMachine {
 	public void checkMoney(Money money) {
 		// お金かチェック
 		if (money instanceof Yen && money instanceof Coin) {
-			this.amount += money.amount;
+			this.amount += money.getAmount();
 		}
 		System.out.println("現在の金額 : ¥" + this.amount);
 	}
