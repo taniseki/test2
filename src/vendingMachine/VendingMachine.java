@@ -53,18 +53,22 @@ public class VendingMachine {
 	 * @param money
 	 */
 	public void checkCoinMoney(Money money) {
+		// nullであるかチェック
+		if (money == null) {
+			return;
+		}
 		// Coinであるかチェック
-		if (money instanceof Coin) {
+		if (!(money instanceof Coin)) {
 			System.out.println("入りません");
 			return;
 		}
 		// Yenであるかチェック
-		if (money instanceof Yen) {
+		if (!(money instanceof Yen)) {
 			System.out.println("その硬貨は使えません");
 			return;
 		}
 		// 1円または5円でないかチェック
-		if (money.getAmount() == 1 && money.getAmount() == 5) {
+		if (money.getAmount() == 1 || money.getAmount() == 5) {
 			System.out.println("1円と5円は使えません");
 			return;
 		}
@@ -79,13 +83,13 @@ public class VendingMachine {
 	 * @param money
 	 */
 	public void checkBillMoney(Money money) {
-		// Coinであるかチェック
-		if (money instanceof Bill) {
+		// Billであるかチェック
+		if (!(money instanceof Bill)) {
 			System.out.println("入りません");
 			return;
 		}
 		// Yenであるかチェック
-		if (money instanceof Yen) {
+		if (!(money instanceof Yen)) {
 			System.out.println("その紙幣は使えません");
 			return;
 		}
