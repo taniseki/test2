@@ -1,3 +1,4 @@
+package field;
 import beverage.Item;
 import human.Human;
 import money.Bill;
