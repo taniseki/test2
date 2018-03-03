@@ -1,37 +1,45 @@
 package vendingMachine;
 
-import java.util.List;
-
 import money.HundredYen;
 
 public class HundredYenChangeBox implements ChangeBox{
-	protected List<HundredYen> stock;
+	private HundredYen[] stock = new HundredYen[100];
 
-	public void addStock(HundredYen hundredYen){
-		stock.add(hundredYen);
+	public void addStock(HundredYen hundredYen) {
+
+		for (int i = 0; i < stock.length; i++) {
+			if (stock[i] == null) {
+				stock[i] = hundredYen;
+				break;
+			}
+		}
 	}
 
-	public HundredYen getHundredYen(){
+	public HundredYen getHundredYen() {
 
-		if(this.stock.size() > 0){
-			return this.stock.remove(0);
+		HundredYen hundredYen = null;
+		for (int i = stock.length; i > 0; i--) {
+			if (stock[i] != null) {
+				hundredYen = stock[i];
+				stock[i] = null;
+				break;
+			}
 		}
-
-		System.out.println("おつりがありません");
-		return null;
+		return hundredYen;
 	}
 
 	/**
 	 * @return stock
 	 */
-	public List<HundredYen> getStock() {
+	public HundredYen[] getStock() {
 		return stock;
 	}
 
 	/**
 	 * @param stock セットする stock
 	 */
-	public void setStock(List<HundredYen> stock) {
+	public void setStock(HundredYen[] stock) {
 		this.stock = stock;
 	}
+
 }
