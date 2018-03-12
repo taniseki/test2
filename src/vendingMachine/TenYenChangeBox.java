@@ -2,9 +2,19 @@ package vendingMachine;
 
 import money.TenYen;
 
+/**
+ * @author masakazu seki
+ *
+ */
 public class TenYenChangeBox implements ChangeBox {
+	/**
+	 * 10円のおつり箱
+	 */
 	private TenYen[] stock = new TenYen[100];
 
+	/**
+	 * TenYenのインスタンスを受け取り、おつり箱にいれる
+	 */
 	public void addStock(TenYen tenYen) {
 
 		for (int i = 0; i < stock.length; i++) {
@@ -15,6 +25,11 @@ public class TenYenChangeBox implements ChangeBox {
 		}
 	}
 
+
+	/**
+	 * おつり箱にあるおつりをすべて返す。
+	 * @return tenYen
+	 */
 	public TenYen getTenYen() {
 
 		TenYen tenYen = null;
