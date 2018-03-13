@@ -15,6 +15,8 @@ public class Top extends AbstractController {
 	static public final String DESCRIPTION2 = "Test2";
 	/** 説明文３ */
 	static public final String DESCRIPTION3 = "Test3";
+	/** 説明文４ */
+	static public final String DESCRIPTION4 = "Test4";
 
 	public Top() {
 		super(DESCRIPTION, DESCRIPTION1, DESCRIPTION2, DESCRIPTION3);
@@ -32,6 +34,12 @@ public class Top extends AbstractController {
 
 	@Override
 	protected void three() {
+		Execution.exec(new Test3());
+	}
+
+	//おつりを実装しようとしたけど、自販機メニューのなかだと思うので保留
+	@Override
+	protected void four() {
 		Execution.exec(new Test3());
 	}
 }

@@ -43,18 +43,4 @@ public class TenYenChangeBox implements ChangeBox {
 		return tenYen;
 	}
 
-	/**
-	 * @return stock
-	 */
-	public TenYen[] getStock() {
-		return stock;
-	}
-
-	/**
-	 * @param stock セットする stock
-	 */
-	public void setStock(TenYen[] stock) {
-		this.stock = stock;
-	}
-
 }

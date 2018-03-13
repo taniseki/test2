@@ -7,6 +7,7 @@ import beverage.Item;
 import money.Bill;
 import money.Coin;
 import money.Money;
+import money.TenYen;
 import money.Yen;
 
 /**
@@ -22,6 +23,10 @@ public class VendingMachine {
 	 * 入っている商品配列
 	 */
 	private Item[][] items = new Item[3][3];
+	/**
+	 * 10円おつり箱
+	 */
+	private TenYenChangeBox tenYenCb = new TenYenChangeBox();
 
 	/**
 	 * コンストラクタ
@@ -72,9 +77,14 @@ public class VendingMachine {
 			System.out.println("1円と5円は使えません");
 			return;
 		}
-		// 全てのチェックが通ればamountに追加
+		//10円なら10円おつり箱へ
+		if(money.getAmount()==10){
+			tenYenCb.addStock((TenYen) money);
+			System.out.println("10円入れました");
+		}
+		/*// 全てのチェックが通ればamountに追加
 		this.amount += money.getAmount();
-		System.out.println("現在の金額 : ¥" + this.amount);
+		System.out.println("現在の金額 : ¥" + this.amount);*/
 	}
 
 	/**
