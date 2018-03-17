@@ -3,6 +3,7 @@ package vendingMachine;
 import money.TenYen;
 
 /**
+ * 10円おつり箱クラス
  * @author masakazu seki
  *
  */
