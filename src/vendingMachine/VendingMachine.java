@@ -77,14 +77,36 @@ public class VendingMachine {
 			System.out.println("1円と5円は使えません");
 			return;
 		}
-		//10円なら10円おつり箱へ
-		if(money.getAmount()==10){
+
+		/**
+		 * switchで判定
+		 * 1円と５円はその前のチェックではじくので、switchからは消してよさそう
+		 */
+		switch(money.getAmount()){
+		case 1:
+			break;
+		case 5:
+			break;
+		case 10:
 			tenYenCb.addStock((TenYen) money);
 			System.out.println("10円入れました");
+			// 全てのチェックが通ればamountに追加
+			this.amount += money.getAmount();
+			break;
+		case 50:
+			tenYenCb.addStock((TenYen) money);
+			System.out.println("10円入れました");
+			// 全てのチェックが通ればamountに追加
+			this.amount += money.getAmount();
+			break;
+		case 100:
+			break;
+		case 500:
+			break;
 		}
-		/*// 全てのチェックが通ればamountに追加
-		this.amount += money.getAmount();
-		System.out.println("現在の金額 : ¥" + this.amount);*/
+
+		//処理の後に、毎回現在の金額を表示
+		System.out.println("現在の金額 : ¥" + this.amount);
 	}
 
 	/**

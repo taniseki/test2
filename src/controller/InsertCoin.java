@@ -3,6 +3,12 @@
  */
 package controller;
 
+import money.FiftyYen;
+import money.FiveYen;
+import money.Money;
+import money.OneYen;
+import money.TenYen;
+
 /**
  * おつり箱にお金を入れる(1)
  * @author masakazu seki
@@ -33,11 +39,63 @@ public class InsertCoin extends AbstractController {
 				,DESCRIPTION5);
 	}
 
-
+	/**
+	 * staticなfieldに格納させている自販機インスタンスを、getして使用する
+	 * 現在は人間クラスができていないので、１円インスタンスをそのまま使用
+	 * 一円を入れる
+	 */
+	@Override
 	protected void one(){
+		if(AbstractController.field.getVendingMachine() == null) {
+			System.out.println("自動販売機がありません。");
+			return;
+		}
+		Money money = new OneYen();
+		AbstractController.field.getVendingMachine().checkCoinMoney(money);
+	}
 
-			}
+	/**
+	 * 5円を入れる
+	 */
+	@Override
+	protected void two(){
+		Money money = new FiveYen();
+		AbstractController.field.getVendingMachine().checkCoinMoney(money);
+	}
 
+	/**
+	 * 10円を入れる
+	 */
+	@Override
+	protected void three(){
+		Money money = new TenYen();
+		AbstractController.field.getVendingMachine().checkCoinMoney(money);
+	}
+
+	/**
+	 * 50円を入れる
+	 */
+	@Override
+	protected void four(){
+		Money money = new FiftyYen();
+		AbstractController.field.getVendingMachine().checkCoinMoney(money);
+	}
+
+	/**
+	 * おつりを貰う
+	 */
+	@Override
+	protected void five(){
+
+	}
+
+	/**
+	 * メニュー2へ
+	 */
+	@Override
+	protected void six(){
+
+	}
 }
 
 

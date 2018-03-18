@@ -16,10 +16,10 @@ public class Top extends AbstractController {
 	/** 説明文３ */
 	static public final String DESCRIPTION3 = "Test3";
 	/** 説明文４ */
-	static public final String DESCRIPTION4 = "Test4";
+	static public final String DESCRIPTION4 = "お金を入れる";
 
 	public Top() {
-		super(DESCRIPTION, DESCRIPTION1, DESCRIPTION2, DESCRIPTION3);
+		super(DESCRIPTION, DESCRIPTION1, DESCRIPTION2, DESCRIPTION3,DESCRIPTION4);
 	}
 
 	@Override
@@ -40,6 +40,6 @@ public class Top extends AbstractController {
 	//おつりを実装しようとしたけど、自販機メニューのなかだと思うので保留
 	@Override
 	protected void four() {
-		Execution.exec(new Test3());
+		Execution.exec(new InsertCoin());
 	}
 }

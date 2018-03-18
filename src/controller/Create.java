@@ -10,15 +10,15 @@ public class Create extends AbstractController {
 	/** 説明文１ */
 	static public final String DESCRIPTION1 = "フィールドを生成";
 	/** 説明文２ */
-	static public final String DESCRIPTION2 = "人間を生成";
+	static public final String DESCRIPTION2 = "自動販売機を生成";
 	/** 説明文３ */
-	static public final String DESCRIPTION3 = "自動販売機を生成";
+	static public final String DESCRIPTION3 = "人間を生成";
 
 	/**
 	 * コンストラクタ
 	 */
 	Create() {
-		super(DESCRIPTION, DESCRIPTION1, DESCRIPTION2);
+		super(DESCRIPTION, DESCRIPTION1, DESCRIPTION2,DESCRIPTION3);
 	}
 
 	/**
