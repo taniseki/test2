@@ -6,6 +6,9 @@ import beverage.Coffee190ml;
 import beverage.Item;
 import money.Bill;
 import money.Coin;
+import money.FiftyYen;
+import money.FiveHundredYen;
+import money.HundredYen;
 import money.Money;
 import money.TenYen;
 import money.Yen;
@@ -27,6 +30,17 @@ public class VendingMachine {
 	 * 10円おつり箱
 	 */
 	private TenYenChangeBox tenYenCb = new TenYenChangeBox();
+	/**
+	 * 50円おつり箱
+	 */
+	private FiftyYenChangeBox fiftyYenCb = new FiftyYenChangeBox();
+	/**
+	 * 100円おつり箱
+	 */
+	private HundredYenChangeBox hundredYenCb = new HundredYenChangeBox();/**
+	 * 500円おつり箱
+	 */
+	private FiveHundredYenChangeBox fiveHundredYenCb = new FiveHundredYenChangeBox();
 
 	/**
 	 * コンストラクタ
@@ -90,18 +104,26 @@ public class VendingMachine {
 		case 10:
 			tenYenCb.addStock((TenYen) money);
 			System.out.println("10円入れました");
-			// 全てのチェックが通ればamountに追加
+			// amountに追加
 			this.amount += money.getAmount();
 			break;
 		case 50:
-			tenYenCb.addStock((TenYen) money);
-			System.out.println("10円入れました");
-			// 全てのチェックが通ればamountに追加
+			fiftyYenCb.addStock((FiftyYen) money);
+			System.out.println("50円入れました");
+			// amountに追加
 			this.amount += money.getAmount();
 			break;
 		case 100:
+			hundredYenCb.addStock((HundredYen) money);
+			System.out.println("100円入れました");
+			// amountに追加
+			this.amount += money.getAmount();
 			break;
 		case 500:
+			fiveHundredYenCb.addStock((FiveHundredYen) money);
+			System.out.println("500円入れました");
+			// amountに追加
+			this.amount += money.getAmount();
 			break;
 		}
 

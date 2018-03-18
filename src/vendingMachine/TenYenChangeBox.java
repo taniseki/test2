@@ -29,6 +29,7 @@ public class TenYenChangeBox implements ChangeBox {
 
 	/**
 	 * おつり箱にあるおつりをすべて返す。
+	 * おつり箱の100要素めから初めて、要素が入ってる一を見つたら処理
 	 * @return tenYen
 	 */
 	public TenYen getTenYen() {
