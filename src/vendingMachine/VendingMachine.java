@@ -161,6 +161,7 @@ public class VendingMachine {
 		System.out.println("入金額 : ¥" + this.amount);
 	}
 
+
 	/**
 	 * おつりを返す
 	 */
