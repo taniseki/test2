@@ -182,6 +182,7 @@ public class VendingMachine {
 		return changeMoney;
 	}
 
+
 	/**
 	 * ドリンクを返却
 	 *
