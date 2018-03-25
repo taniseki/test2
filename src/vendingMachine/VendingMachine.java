@@ -6,11 +6,7 @@ import beverage.Coffee190ml;
 import beverage.Item;
 import money.Bill;
 import money.Coin;
-import money.FiftyYen;
-import money.FiveHundredYen;
-import money.HundredYen;
 import money.Money;
-import money.TenYen;
 import money.Yen;
 
 /**
@@ -41,7 +37,10 @@ public class VendingMachine {
 	 * 500円おつり箱
 	 */
 	private FiveHundredYenChangeBox fiveHundredYenCb = new FiveHundredYenChangeBox();
-
+	/**
+	 * 現在の取引で入金した金額
+	 */
+	private ChangeBuffer chBuf = new ChangeBuffer();
 	/**
 	 * コンストラクタ
 	 */
@@ -91,12 +90,17 @@ public class VendingMachine {
 			System.out.println("1円と5円は使えません");
 			return;
 		}
+		//Buff箱に入金する
+		chBuf.addMoney(money);
+		this.amount += money.getAmount();
+		//処理の後に、毎回現在の金額を表示
+		System.out.println("現在の金額 : ¥" + this.amount);
 
-		/**
+		/*
 		 * switchで判定
 		 * 1円と５円はその前のチェックではじくので、switchからは消してよさそう
 		 */
-		switch(money.getAmount()){
+		/*switch(money.getAmount()){
 		case 1:
 			break;
 		case 5:
@@ -125,7 +129,7 @@ public class VendingMachine {
 			// amountに追加
 			this.amount += money.getAmount();
 			break;
-		}
+		}*/
 
 		//処理の後に、毎回現在の金額を表示
 		System.out.println("現在の金額 : ¥" + this.amount);
@@ -155,6 +159,26 @@ public class VendingMachine {
 		// 全てのチェックが通ればamountに追加
 		this.amount += money.getAmount();
 		System.out.println("入金額 : ¥" + this.amount);
+	}
+
+	/**
+	 * おつりを返す
+	 */
+	public Money[] returnChange(){
+		//Buff箱の持っている配列を返し、Buff箱の配列をnullで上書き
+		Money[] changeMoney  = chBuf.returnChangeBuf();
+		this.amount = 0;
+		System.out.println("おつりを返却します");
+
+		//返却するおつりがじゃらじゃら出てくるイメージ（コインの全表示）
+		for(int i = 0;i<changeMoney.length;i++){
+			if(!(changeMoney[i]==null)){
+				System.out.println(changeMoney[i].getAmount()+"円");
+			}
+		}
+
+		System.out.println("現在の金額 : ¥" + this.amount);
+		return changeMoney;
 	}
 
 	/**

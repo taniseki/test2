@@ -36,7 +36,7 @@ public class InsertCoin extends AbstractController {
 	 */
 	InsertCoin(){
 		super(DESCRIPTION,DESCRIPTION1,DESCRIPTION2,DESCRIPTION3,DESCRIPTION4
-				,DESCRIPTION5);
+				,DESCRIPTION5,DESCRIPTION6);
 	}
 
 	/**
@@ -46,6 +46,10 @@ public class InsertCoin extends AbstractController {
 	 */
 	@Override
 	protected void one(){
+		if(AbstractController.field == null) {
+			System.out.println("フィールドがありません。");
+			return;
+		}
 		if(AbstractController.field.getVendingMachine() == null) {
 			System.out.println("自動販売機がありません。");
 			return;
@@ -59,6 +63,14 @@ public class InsertCoin extends AbstractController {
 	 */
 	@Override
 	protected void two(){
+		if(AbstractController.field == null) {
+			System.out.println("フィールドがありません。");
+			return;
+		}
+		if(AbstractController.field.getVendingMachine() == null) {
+			System.out.println("自動販売機がありません。");
+			return;
+		}
 		Money money = new FiveYen();
 		AbstractController.field.getVendingMachine().checkCoinMoney(money);
 	}
@@ -68,6 +80,14 @@ public class InsertCoin extends AbstractController {
 	 */
 	@Override
 	protected void three(){
+		if(AbstractController.field == null) {
+			System.out.println("フィールドがありません。");
+			return;
+		}
+		if(AbstractController.field.getVendingMachine() == null) {
+			System.out.println("自動販売機がありません。");
+			return;
+		}
 		Money money = new TenYen();
 		AbstractController.field.getVendingMachine().checkCoinMoney(money);
 	}
@@ -77,6 +97,14 @@ public class InsertCoin extends AbstractController {
 	 */
 	@Override
 	protected void four(){
+		if(AbstractController.field == null) {
+			System.out.println("フィールドがありません。");
+			return;
+		}
+		if(AbstractController.field.getVendingMachine() == null) {
+			System.out.println("自動販売機がありません。");
+			return;
+		}
 		Money money = new FiftyYen();
 		AbstractController.field.getVendingMachine().checkCoinMoney(money);
 	}
@@ -86,6 +114,15 @@ public class InsertCoin extends AbstractController {
 	 */
 	@Override
 	protected void five(){
+		if(AbstractController.field == null) {
+			System.out.println("フィールドがありません。");
+			return;
+		}
+		if(AbstractController.field.getVendingMachine() == null) {
+			System.out.println("自動販売機がありません。");
+			return;
+		}
+		AbstractController.field.getVendingMachine().returnChange();
 
 	}
 
@@ -94,7 +131,7 @@ public class InsertCoin extends AbstractController {
 	 */
 	@Override
 	protected void six(){
-
+		Execution.exec(new InsertCoin_2());
 	}
 }
 
